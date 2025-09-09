@@ -1,21 +1,17 @@
 #include<stdio.h>
 
 int main(){
-    int T[] = {0,1, 7,6, 4, 3,5};
-    //int temp = T[0];
-    
-
+    int T[] = {2,1, 7,6, 4, 3,5};
+    int temp;
     for (int i = 0; i < 7; i++){
-        if(T[i] < T[i+1]){
-            T[i] = T[i+1];
-         }
-         printf("%d", T[i]);
+        for(int j=0;j<7-i;j++){
+            if(T[j] > T[j+1]){
+                temp = T[j];
+                T[j] = T[j+1];
+                T[j+1] = temp;
+            }
+        }
+        printf("%d", T[i]);
     }
-
-
-    
-    
-    
-
     return 0;
 }
